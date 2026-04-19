@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — The Indian Farmers | Get In Touch</title>
+    <meta name="description" content="Contact The Indian Farmers for premium wheat flour orders, business inquiries, or general questions. Located in Prayagraj, UP. Call +91-7309399555.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wheat: { 50: '#fefcf3', 100: '#fdf6dc', 200: '#faeab8', 300: '#f5d880', 400: '#efc34d', 500: '#e8ac24', 600: '#d08b18', 700: '#ad6816', 800: '#8d5219', 900: '#74441a' },
+                        forest: { 50: '#f0faf0', 100: '#d9f2d9', 200: '#b5e5b5', 300: '#82cf82', 400: '#4fb84f', 500: '#2d8a2d', 600: '#237023', 700: '#1d5a1d', 800: '#1c481c', 900: '#1a3c1a' },
+                        earth: { 50: '#faf6f0', 100: '#f0e4d0', 200: '#e0c79e', 300: '#cda46a', 400: '#bf8844', 500: '#a87035', 600: '#975d2c', 700: '#7c4826', 800: '#673c24', 900: '#553321' },
+                        cream: { 50: '#fffef7', 100: '#fefaeb', 200: '#fdf3cc', 300: '#fbe9a3', 400: '#f8d86a', 500: '#f5c83a' }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf6f0; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #e8ac24, #a87035); border-radius: 10px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        .hero-gradient { background: linear-gradient(135deg, rgba(30, 20, 5, 0.8) 0%, rgba(60, 40, 10, 0.6) 40%, rgba(100, 70, 20, 0.4) 100%); }
+        .gold-gradient { background: linear-gradient(135deg, #e8ac24 0%, #d08b18 50%, #ad6816 100%); }
+        .green-gradient { background: linear-gradient(135deg, #2d8a2d 0%, #237023 50%, #1d5a1d 100%); }
+        
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(168, 112, 53, 0.2); }
+        
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); }
+        
+        .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        
+        .wheat-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C30 5 35 15 30 25 C25 15 30 5 30 5Z' fill='%23e8ac2410' /%3E%3C/svg%3E"); }
+        
+        .btn-primary { background: linear-gradient(135deg, #e8ac24, #d08b18); color: white; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-primary:hover::before { left: 100%; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232, 172, 36, 0.4); }
+
+        .btn-green { background: linear-gradient(135deg, #2d8a2d, #237023); color: white; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-green::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-green:hover::before { left: 100%; }
+        .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45, 138, 45, 0.4); }
+
+        .nav-scrolled { background: rgba(255, 254, 247, 0.97) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.08) !important; backdrop-filter: blur(20px) !important; }
+        .nav-scrolled .nav-link { color: #553321 !important; }
+        .nav-scrolled .nav-link:hover { color: #e8ac24 !important; }
+        .nav-scrolled .nav-logo-text { color: #553321 !important; }
+
+        .section-divider { height: 4px; background: linear-gradient(90deg, transparent, #e8ac24, #2d8a2d, #e8ac24, transparent); }
+
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu.open { transform: translateX(0); }
+
+        @keyframes wheat-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+        .wheat-sway { animation: wheat-sway 3s ease-in-out infinite; }
+
+        /* Form styles */
+        .form-input {
+            background: rgba(255, 254, 247, 0.8);
+            border: 2px solid #faeab8;
+            border-radius: 1rem;
+            padding: 0.875rem 1.25rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: #553321;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #e8ac24;
+            box-shadow: 0 0 0 4px rgba(232, 172, 36, 0.15);
+            background: white;
+        }
+        .form-input::placeholder {
+            color: #cda46a;
+        }
+        .form-input:hover {
+            border-color: #f5d880;
+        }
+        
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Success animation */
+        @keyframes checkmark {
+            0% { transform: scale(0) rotate(45deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+            100% { transform: scale(1) rotate(45deg); opacity: 1; }
+        }
+        .success-check {
+            width: 20px;
+            height: 40px;
+            border-right: 4px solid #2d8a2d;
+            border-bottom: 4px solid #2d8a2d;
+            display: inline-block;
+            animation: checkmark 0.5s ease-in-out;
+        }
+
+        /* Social link hover */
+        .social-link { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .social-link:hover { transform: translateY(-4px) scale(1.1); }
+    </style>
+</head>
+<body class="bg-cream-50">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="images/logo.png" alt="The Indian Farmers Logo" class="h-14 w-14 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div>
+                        <span class="nav-logo-text text-white font-display text-xl font-bold leading-tight block transition-colors duration-300">The Indian<br>Farmers</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-wheat-400 hover:after:w-full after:transition-all after:duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-wheat-400 hover:after:w-full after:transition-all after:duration-300">About</a>
+                    <a href="contact.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-wheat-400 after:scale-x-100 after:transition-transform">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide shadow-lg">Get In Touch</a>
+                </div>
+                
+                <button id="menuToggle" class="md:hidden text-white text-2xl focus:outline-none z-60">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-screen w-72 bg-earth-900/95 backdrop-blur-xl z-50 flex flex-col pt-20 px-8 gap-6 md:hidden shadow-2xl">
+            <button id="menuClose" class="absolute top-6 right-6 text-white text-2xl"><i class="fas fa-times"></i></button>
+            <a href="index.html" class="text-white font-medium text-lg hover:text-wheat-400 transition-colors border-b border-white/10 pb-3">Home</a>
+            <a href="about.html" class="text-white font-medium text-lg hover:text-wheat-400 transition-colors border-b border-white/10 pb-3">About</a>
+            <a href="contact.html" class="text-wheat-400 font-semibold text-lg border-b border-wheat-400/20 pb-3">Contact</a>
+            <a href="contact.html" class="btn-primary px-6 py-3 rounded-full font-semibold text-center mt-4 shadow-lg">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- ========== CONTACT HERO ========== -->
+    <section class="relative h-[55vh] min-h-[380px] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&h=800&fit=crop" alt="Wheat field sunrise" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-20 left-10 text-wheat-400/20 text-6xl wheat-sway">🌾</div>
+            <div class="absolute bottom-20 right-20 text-wheat-400/15 text-5xl wheat-sway" style="animation-delay: 1s;">🌾</div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm font-medium text-wheat-300 mb-6">
+                <span class="w-2 h-2 bg-wheat-400 rounded-full animate-pulse"></span>
+                We're Here For You
+            </div>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">Contact <span class="text-wheat-400">Us</span></h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto font-light">Have questions, want to place a bulk order, or become a distributor? We'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ========== CONTACT INFO CARDS ========== -->
+    <section class="py-20 bg-cream-50 wheat-pattern relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 -mt-32 relative z-20">
+                <!-- Address -->
+                <div class="reveal card-hover bg-white p-6 rounded-3xl shadow-lg border border-wheat-100 text-center" style="transition-delay: 0.1s;">
+                    <div class="contact-card-icon gold-gradient mx-auto mb-4 shadow-lg shadow-wheat-200">
+                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-earth-900 mb-2">Our Address</h3>
+                    <p class="text-earth-600 text-sm leading-relaxed">Plot No 33, Block A, Dandupur,<br>Rewa Road, Prayagraj,<br>Uttar Pradesh – 212111</p>
+                </div>
+                
+                <!-- Phone -->
+                <div class="reveal card-hover bg-white p-6 rounded-3xl shadow-lg border border-wheat-100 text-center" style="transition-delay: 0.2s;">
+                    <div class="contact-card-icon green-gradient mx-auto mb-4 shadow-lg shadow-forest-200">
+                        <i class="fas fa-phone-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-earth-900 mb-2">Phone</h3>
+                    <a href="tel:+917309399555" class="text-earth-600 hover:text-wheat-600 transition-colors text-sm block">+91-7309399555</a>
+                    <p class="text-earth-400 text-xs mt-2">Customer Care Helpline</p>
+                </div>
+                
+                <!-- Email -->
+                <div class="reveal card-hover bg-white p-6 rounded-3xl shadow-lg border border-wheat-100 text-center" style="transition-delay: 0.3s;">
+                    <div class="contact-card-icon gold-gradient mx-auto mb-4 shadow-lg shadow-wheat-200">
+                        <i class="fas fa-envelope text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-earth-900 mb-2">Email</h3>
+                    <a href="mailto:trade@theindianfarmers.org" class="text-earth-600 hover:text-wheat-600 transition-colors text-sm block break-all">trade@theindianfarmers.org</a>
+                    <p class="text-earth-400 text-xs mt-2">Business & Trade Inquiries</p>
+                </div>
+                
+                <!-- Hours -->
+                <div class="reveal card-hover bg-white p-6 rounded-3xl shadow-lg border border-wheat-100 text-center" style="transition-delay: 0.4s;">
+                    <div class="contact-card-icon green-gradient mx-auto mb-4 shadow-lg shadow-forest-200">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-earth-900 mb-2">Opening Hours</h3>
+                    <p class="text-earth-600 text-sm">Mon – Sat: 9:00 AM – 7:00 PM</p>
+                    <p class="text-earth-600 text-sm">Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM & MAP ========== -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-wheat-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-forest-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="reveal-left">
+                    <span class="inline-block text-wheat-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Send a Message</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                        Get In <span class="text-wheat-600">Touch</span>
+                    </h2>
+                    <div class="w-24 h-1 gold-gradient rounded-full mb-8"></div>
+                    <p class="text-earth-600 mb-8">Whether you're a retailer, distributor, or a family wanting the best atta — fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/trade@theindianfarmers.org" method="POST" class="space-y-5">
+                        <!-- Honeypot -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Success Page -->
+                        <input type="hidden" name="_next" value="contact.html">
+                        
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block text-earth-800 font-medium text-sm mb-2">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" class="form-input" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-earth-800 font-medium text-sm mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-earth-800 font-medium text-sm mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" class="form-input" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-earth-800 font-medium text-sm mb-2">Subject</label>
+                            <select id="subject" name="subject" class="form-input">
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Bulk Order">Bulk Order</option>
+                                <option value="Distributorship">Distributorship</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-earth-800 font-medium text-sm mb-2">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." class="form-input resize-none" required></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submitBtn" class="btn-primary w-full py-4 rounded-2xl font-bold text-lg shadow-xl flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="hidden mt-6 p-6 bg-forest-50 border-2 border-forest-200 rounded-2xl text-center">
+                        <div class="w-16 h-16 bg-forest-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-forest-800 mb-2">Message Sent!</h3>
+                        <p class="text-forest-600">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <!-- Map & Info -->
+                <div class="reveal-right space-y-8">
+                    <div>
+                        <span class="inline-block text-forest-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Find Us</span>
+                        <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                            Our <span class="text-forest-600">Location</span>
+                        </h2>
+                        <div class="w-24 h-1 green-gradient rounded-full mb-8"></div>
+                    </div>
+                    
+                    <!-- Embedded Map -->
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-wheat-100">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.5!2d81.85!3d25.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI1JzQ4LjAiTiA4McKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="The Indian Farmers Location Map">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Quick Contact Info -->
+                    <div class="bg-gradient-to-br from-earth-900 to-earth-800 rounded-3xl p-8 text-white shadow-xl">
+                        <h3 class="font-display text-xl font-bold text-wheat-400 mb-6">Quick Contact</h3>
+                        <div class="space-y-4">
+                            <a href="tel:+917309399555" class="flex items-center gap-4 group">
+                                <div class="w-10 h-10 bg-wheat-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-wheat-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/60 text-xs">Customer Care</p>
+                                    <p class="text-white group-hover:text-wheat-400 transition-colors font-medium">+91-7309399555</p>
+                                </div>
+                            </a>
+                            <a href="mailto:trade@theindianfarmers.org" class="flex items-center gap-4 group">
+                                <div class="w-10 h-10 bg-forest-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-forest-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/60 text-xs">Email Us</p>
+                                    <p class="text-white group-hover:text-wheat-400 transition-colors font-medium">trade@theindianfarmers.org</p>
+                                </div>
+                            </a>
+                            <a href="https://theindianfarmers.info" target="_blank" class="flex items-center gap-4 group">
+                                <div class="w-10 h-10 bg-wheat-500/20 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-globe text-wheat-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/60 text-xs">Website</p>
+                                    <p class="text-white group-hover:text-wheat-400 transition-colors font-medium">theindianfarmers.info</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Packaging & Marketing -->
+                        <div class="mt-6 pt-6 border-t border-white/10">
+                            <p class="text-white/40 text-xs uppercase tracking-wider mb-2">Packaged & Marketed By</p>
+                            <p class="text-white/80 text-sm font-medium">Shubham Agro Product</p>
+                            <p class="text-white/50 text-xs mt-1">Plot No 33, Block A, Dandupur, Rewa Road, Prayagraj, UP – 212111</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ========== SOCIAL MEDIA ========== -->
+    <section class="py-20 bg-gradient-to-br from-cream-50 via-wheat-50 to-cream-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="reveal">
+                <span class="inline-block text-wheat-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Stay Connected</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                    Follow Us on <span class="text-wheat-600">Social Media</span>
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full mb-8"></div>
+                <p class="text-earth-600 mb-12 max-w-xl mx-auto">Stay updated with the latest products, farmer stories, recipes, and special offers. Join our growing community!</p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Facebook -->
+                    <a href="#" class="social-link group flex flex-col items-center gap-3 p-6 bg-white rounded-3xl shadow-lg border border-wheat-100 w-36 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fab fa-facebook-f text-white text-2xl"></i>
+                        </div>
+                        <span class="text-earth-700 font-semibold text-sm">Facebook</span>
+                    </a>
+                    
+                    <!-- Instagram -->
+                    <a href="#" class="social-link group flex flex-col items-center gap-3 p-6 bg-white rounded-3xl shadow-lg border border-wheat-100 w-36 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram text-white text-2xl"></i>
+                        </div>
+                        <span class="text-earth-700 font-semibold text-sm">Instagram</span>
+                    </a>
+                    
+                    <!-- YouTube -->
+                    <a href="#" class="social-link group flex flex-col items-center gap-3 p-6 bg-white rounded-3xl shadow-lg border border-wheat-100 w-36 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fab fa-youtube text-white text-2xl"></i>
+                        </div>
+                        <span class="text-earth-700 font-semibold text-sm">YouTube</span>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/917309399555" target="_blank" class="social-link group flex flex-col items-center gap-3 p-6 bg-white rounded-3xl shadow-lg border border-wheat-100 w-36 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fab fa-whatsapp text-white text-2xl"></i>
+                        </div>
+                        <span class="text-earth-700 font-semibold text-sm">WhatsApp</span>
+                    </a>
+                    
+                    <!-- Twitter / X -->
+                    <a href="#" class="social-link group flex flex-col items-center gap-3 p-6 bg-white rounded-3xl shadow-lg border border-wheat-100 w-36 hover:shadow-xl">
+                        <div class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fab fa-x-twitter text-white text-2xl"></i>
+                        </div>
+                        <span class="text-earth-700 font-semibold text-sm">X (Twitter)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block text-forest-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Common Questions</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                    Frequently <span class="text-forest-600">Asked</span>
+                </h2>
+                <div class="w-24 h-1 green-gradient mx-auto rounded-full mb-6"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="reveal faq-item bg-gradient-to-br from-wheat-50 to-cream-50 rounded-2xl border border-wheat-100 overflow-hidden shadow-sm" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display text-lg font-bold text-earth-900 pr-4">What makes Indian Farmers atta different?</span>
+                        <i class="fas fa-plus text-wheat-600 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="px-6 pb-6 text-earth-600 leading-relaxed">Our atta is stone-ground using traditional chakki methods, which preserves natural fiber, protein, and nutrients. We source directly from farmers, ensuring 100% pure wheat with zero additives, preservatives, or chemicals. Every batch is FSSAI, GMP, and HACCP certified.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="reveal faq-item bg-gradient-to-br from-forest-50 to-cream-50 rounded-2xl border border-forest-100 overflow-hidden shadow-sm" style="transition-delay: 0.15s;">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display text-lg font-bold text-earth-900 pr-4">Do you deliver across India?</span>
+                        <i class="fas fa-plus text-forest-600 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="px-6 pb-6 text-earth-600 leading-relaxed">Currently, we deliver across Uttar Pradesh and neighboring states. For bulk orders and distribution partnerships, please contact us directly at +91-7309399555 or email trade@theindianfarmers.org.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="reveal faq-item bg-gradient-to-br from-wheat-50 to-cream-50 rounded-2xl border border-wheat-100 overflow-hidden shadow-sm" style="transition-delay: 0.2s;">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display text-lg font-bold text-earth-900 pr-4">What pack sizes are available?</span>
+                        <i class="fas fa-plus text-wheat-600 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="px-6 pb-6 text-earth-600 leading-relaxed">We offer multiple pack sizes — 5 kg, 10 kg, and 50 kg bulk packs. The 50 kg pack is ideal for commercial use (restaurants, hotels, catering businesses). Contact us for custom quantity orders.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="reveal faq-item bg-gradient-to-br from-forest-50 to-cream-50 rounded-2xl border border-forest-100 overflow-hidden shadow-sm" style="transition-delay: 0.25s;">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-display text-lg font-bold text-earth-900 pr-4">How can I become a distributor?</span>
+                        <i class="fas fa-plus text-forest-600 flex-shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <p class="px-6 pb-6 text-earth-600 leading-relaxed">We're expanding our distribution network! If you're interested in becoming an authorized distributor, please fill out the contact form above with "Distributorship" as the subject, or call us directly at +91-7309399555.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-earth-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="The Indian Farmers Logo" class="h-14 w-14 rounded-full object-cover shadow-lg">
+                        <span class="font-display text-xl font-bold">The Indian<br>Farmers</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Pure Chakki Atta — From Farm to Kitchen. Premium quality wheat flour sourced directly from Indian farms.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-youtube text-sm"></i></a>
+                        <a href="https://wa.me/917309399555" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 transition-all duration-300"><i class="fab fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Home</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> About Us</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Products</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Premium Chakki Atta</a></li>
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Organic Whole Wheat</a></li>
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Bulk Pack – 50kg</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-wheat-400 mt-1"></i>
+                            <span class="text-white/60 text-sm">Plot No 33, Block A, Dandupur,<br>Rewa Road, Prayagraj, UP – 212111</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-wheat-400"></i>
+                            <a href="tel:+917309399555" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">+91-7309399555</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-wheat-400"></i>
+                            <a href="mailto:trade@theindianfarmers.org" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">trade@theindianfarmers.org</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-globe text-wheat-400"></i>
+                            <a href="https://theindianfarmers.info" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">theindianfarmers.info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 mb-8">
+                <div class="flex flex-wrap justify-center gap-8 items-center">
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-certificate text-wheat-400/60 text-lg"></i>
+                        FSSAI: 22725600000257
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-check-circle text-forest-400/60 text-lg"></i>
+                        GMP Certified
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-shield-alt text-wheat-400/60 text-lg"></i>
+                        HACCP Certified
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-flag text-forest-400/60 text-lg"></i>
+                        Made in India
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 The Indian Farmers — Shubham Agro Product. All Rights Reserved.</p>
+                <p class="text-white/30 text-xs mt-2">Pure Grain, Honest Taste — From Farm to Kitchen</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917309399555?text=Hi%2C%20I%27m%20interested%20in%20Indian%20Farmers%20Atta.%20Please%20share%20more%20details." target="_blank" class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce" style="animation-duration: 2s;">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 gold-gradient text-white rounded-full shadow-xl opacity-0 pointer-events-none transition-all duration-300 hover:shadow-2xl hover:scale-110 z-50 flex items-center justify-center">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 80);
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+        menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+        // Scroll reveal
+        function revealOnScroll() {
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // FAQ toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            const allFaqs = document.querySelectorAll('.faq-answer');
+            const allIcons = document.querySelectorAll('.faq-toggle i');
+
+            // Close all others
+            allFaqs.forEach(faq => {
+                if (faq !== answer) {
+                    faq.style.maxHeight = '0';
+                }
+            });
+            allIcons.forEach(i => {
+                if (i !== icon) {
+                    i.classList.remove('fa-minus');
+                    i.classList.add('fa-plus');
+                    i.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0';
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Form submission (visual feedback for non-FormSubmit testing)
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        // Check URL params for success redirect
+        if (window.location.search.includes('success') || window.location.hash.includes('success')) {
+            successMessage.classList.remove('hidden');
+            contactForm.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

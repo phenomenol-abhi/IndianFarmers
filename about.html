@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — The Indian Farmers | Our Story & Mission</title>
+    <meta name="description" content="Discover the story behind The Indian Farmers. Learn about our mission, wheat sourcing from Indian farms, organic grinding process, and quality commitment.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wheat: { 50: '#fefcf3', 100: '#fdf6dc', 200: '#faeab8', 300: '#f5d880', 400: '#efc34d', 500: '#e8ac24', 600: '#d08b18', 700: '#ad6816', 800: '#8d5219', 900: '#74441a' },
+                        forest: { 50: '#f0faf0', 100: '#d9f2d9', 200: '#b5e5b5', 300: '#82cf82', 400: '#4fb84f', 500: '#2d8a2d', 600: '#237023', 700: '#1d5a1d', 800: '#1c481c', 900: '#1a3c1a' },
+                        earth: { 50: '#faf6f0', 100: '#f0e4d0', 200: '#e0c79e', 300: '#cda46a', 400: '#bf8844', 500: '#a87035', 600: '#975d2c', 700: '#7c4826', 800: '#673c24', 900: '#553321' },
+                        cream: { 50: '#fffef7', 100: '#fefaeb', 200: '#fdf3cc', 300: '#fbe9a3', 400: '#f8d86a', 500: '#f5c83a' }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf6f0; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #e8ac24, #a87035); border-radius: 10px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        .hero-gradient { background: linear-gradient(135deg, rgba(30, 20, 5, 0.8) 0%, rgba(60, 40, 10, 0.6) 40%, rgba(100, 70, 20, 0.4) 100%); }
+        .gold-gradient { background: linear-gradient(135deg, #e8ac24 0%, #d08b18 50%, #ad6816 100%); }
+        .green-gradient { background: linear-gradient(135deg, #2d8a2d 0%, #237023 50%, #1d5a1d 100%); }
+        
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(168, 112, 53, 0.2); }
+        
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); }
+        
+        .text-shadow { text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        
+        .wheat-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C30 5 35 15 30 25 C25 15 30 5 30 5Z' fill='%23e8ac2410' /%3E%3C/svg%3E"); }
+        
+        .btn-primary { background: linear-gradient(135deg, #e8ac24, #d08b18); color: white; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-primary:hover::before { left: 100%; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232, 172, 36, 0.4); }
+
+        .btn-green { background: linear-gradient(135deg, #2d8a2d, #237023); color: white; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-green::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-green:hover::before { left: 100%; }
+        .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45, 138, 45, 0.4); }
+
+        .nav-scrolled { background: rgba(255, 254, 247, 0.97) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.08) !important; backdrop-filter: blur(20px) !important; }
+        .nav-scrolled .nav-link { color: #553321 !important; }
+        .nav-scrolled .nav-link:hover { color: #e8ac24 !important; }
+        .nav-scrolled .nav-logo-text { color: #553321 !important; }
+
+        .section-divider { height: 4px; background: linear-gradient(90deg, transparent, #e8ac24, #2d8a2d, #e8ac24, transparent); }
+
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu.open { transform: translateX(0); }
+
+        .timeline-line { background: linear-gradient(180deg, #e8ac24, #2d8a2d, #e8ac24); }
+        
+        @keyframes wheat-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+        .wheat-sway { animation: wheat-sway 3s ease-in-out infinite; }
+
+        /* Image gallery hover */
+        .gallery-item { overflow: hidden; }
+        .gallery-item img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease; }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(1.1); }
+        .gallery-overlay { opacity: 0; transition: opacity 0.4s ease; background: linear-gradient(to top, rgba(85, 51, 33, 0.8), transparent); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-cream-50">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="images/logo.png" alt="The Indian Farmers Logo" class="h-14 w-14 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div>
+                        <span class="nav-logo-text text-white font-display text-xl font-bold leading-tight block transition-colors duration-300">The Indian<br>Farmers</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-wheat-400 hover:after:w-full after:transition-all after:duration-300">Home</a>
+                    <a href="about.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-wheat-400 after:scale-x-100 after:transition-transform">About</a>
+                    <a href="contact.html" class="nav-link text-white font-medium hover:text-wheat-400 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-wheat-400 hover:after:w-full after:transition-all after:duration-300">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide shadow-lg">Get In Touch</a>
+                </div>
+                
+                <button id="menuToggle" class="md:hidden text-white text-2xl focus:outline-none z-60">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-screen w-72 bg-earth-900/95 backdrop-blur-xl z-50 flex flex-col pt-20 px-8 gap-6 md:hidden shadow-2xl">
+            <button id="menuClose" class="absolute top-6 right-6 text-white text-2xl"><i class="fas fa-times"></i></button>
+            <a href="index.html" class="text-white font-medium text-lg hover:text-wheat-400 transition-colors border-b border-white/10 pb-3">Home</a>
+            <a href="about.html" class="text-wheat-400 font-semibold text-lg border-b border-wheat-400/20 pb-3">About</a>
+            <a href="contact.html" class="text-white font-medium text-lg hover:text-wheat-400 transition-colors border-b border-white/10 pb-3">Contact</a>
+            <a href="contact.html" class="btn-primary px-6 py-3 rounded-full font-semibold text-center mt-4 shadow-lg">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- ========== ABOUT HERO ========== -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1600&h=800&fit=crop" alt="Golden wheat fields at sunset" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        
+        <!-- Floating wheat -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-20 left-10 text-wheat-400/20 text-6xl wheat-sway">🌾</div>
+            <div class="absolute bottom-20 right-20 text-wheat-400/15 text-5xl wheat-sway" style="animation-delay: 1s;">🌾</div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm font-medium text-wheat-300 mb-6">
+                <span class="w-2 h-2 bg-wheat-400 rounded-full animate-pulse"></span>
+                Our Story
+            </div>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow">About <span class="text-wheat-400">Us</span></h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto font-light">The story of dedication, purity, and an unwavering commitment to bringing India's finest wheat flour to your kitchen.</p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ========== COMPANY STORY ========== -->
+    <section class="py-24 bg-cream-50 wheat-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="reveal-left relative">
+                    <div class="absolute -inset-4 bg-wheat-300/20 rounded-3xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&h=500&fit=crop" alt="Indian farmer in wheat field" class="relative w-full h-[420px] object-cover rounded-3xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-forest-600 text-white p-6 rounded-2xl shadow-xl">
+                        <div class="text-3xl font-bold font-display">Since</div>
+                        <div class="text-lg font-medium">Day One</div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="reveal-right space-y-6">
+                    <span class="inline-block text-wheat-600 font-semibold uppercase tracking-[0.2em] text-sm">Our Beginning</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 leading-tight">
+                        A Story Born in India's <span class="text-wheat-600">Heartland</span>
+                    </h2>
+                    <p class="text-earth-700 text-lg leading-relaxed">
+                        The Indian Farmers was founded with a simple yet powerful vision — to bring the purest, most nutritious wheat flour from India's fertile farmlands directly to every household.
+                    </p>
+                    <p class="text-earth-600 leading-relaxed">
+                        Started by <strong>Shubham Agro Product</strong> in Prayagraj, Uttar Pradesh, we began our journey from the wheat-rich plains of the Ganga-Yamuna Doab. What started as a small operation has grown into a trusted brand serving thousands of families across the region.
+                    </p>
+                    <p class="text-earth-600 leading-relaxed">
+                        Our founder believed that every family deserves access to genuinely pure, chemical-free flour — the kind our grandparents grew up with. That belief drives everything we do today.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <div class="flex items-center gap-2 bg-wheat-50 px-4 py-2 rounded-full border border-wheat-200">
+                            <i class="fas fa-check-circle text-wheat-600"></i>
+                            <span class="text-earth-700 text-sm font-medium">Family-owned</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-forest-50 px-4 py-2 rounded-full border border-forest-200">
+                            <i class="fas fa-check-circle text-forest-600"></i>
+                            <span class="text-earth-700 text-sm font-medium">Locally rooted</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-wheat-50 px-4 py-2 rounded-full border border-wheat-200">
+                            <i class="fas fa-check-circle text-wheat-600"></i>
+                            <span class="text-earth-700 text-sm font-medium">Nationally trusted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OUR MISSION ========== -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-forest-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-wheat-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block text-forest-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Our Mission</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                    Empowering <span class="text-forest-600">Indian Farmers</span>
+                </h2>
+                <div class="w-24 h-1 green-gradient mx-auto rounded-full mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mission 1 -->
+                <div class="reveal card-hover text-center p-8 rounded-3xl bg-gradient-to-br from-wheat-50 to-cream-50 border border-wheat-100" style="transition-delay: 0.1s;">
+                    <div class="w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-wheat-200">
+                        <i class="fas fa-hands-helping text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-earth-900 mb-3">Support Local Farmers</h3>
+                    <p class="text-earth-600 text-sm leading-relaxed">We work directly with more than 5,000 farmers across Uttar Pradesh, ensuring fair prices and eliminating middlemen. Every purchase directly supports our farming families.</p>
+                </div>
+                
+                <!-- Mission 2 -->
+                <div class="reveal card-hover text-center p-8 rounded-3xl bg-gradient-to-br from-forest-50 to-cream-50 border border-forest-100" style="transition-delay: 0.2s;">
+                    <div class="w-20 h-20 green-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-forest-200">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-earth-900 mb-3">Deliver Pure Nutrition</h3>
+                    <p class="text-earth-600 text-sm leading-relaxed">Our mission is to ensure every Indian family has access to truly pure, unadulterated chakki atta that's rich in natural fiber, protein, and essential nutrients.</p>
+                </div>
+                
+                <!-- Mission 3 -->
+                <div class="reveal card-hover text-center p-8 rounded-3xl bg-gradient-to-br from-wheat-50 to-cream-50 border border-wheat-100" style="transition-delay: 0.3s;">
+                    <div class="w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-wheat-200">
+                        <i class="fas fa-globe-asia text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-earth-900 mb-3">Sustainable Practices</h3>
+                    <p class="text-earth-600 text-sm leading-relaxed">We promote sustainable agriculture, reduce waste, and use eco-friendly packaging. Our grain-to-flour process preserves the environment while nourishing lives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ========== WHEAT SOURCING ========== -->
+    <section class="py-24 bg-gradient-to-br from-earth-900 via-earth-800 to-earth-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 text-9xl">🌾</div>
+            <div class="absolute bottom-10 right-10 text-8xl">🌾</div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="reveal-left space-y-6">
+                    <span class="inline-block text-wheat-400 font-semibold uppercase tracking-[0.2em] text-sm">Wheat Sourcing</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+                        Sourced from India's <span class="text-wheat-400">Golden Belt</span>
+                    </h2>
+                    <p class="text-white/70 text-lg leading-relaxed">
+                        Our wheat is sourced from the fertile plains of the Ganga-Yamuna Doab in Uttar Pradesh — one of India's most prolific wheat-growing regions known for its nutrient-rich soil and ideal climate.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-wheat-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-map-pin text-wheat-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-wheat-300 mb-1">Direct Farm Partnerships</h4>
+                                <p class="text-white/60 text-sm">We partner directly with farmer cooperatives across Prayagraj, Varanasi, and surrounding districts.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-forest-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-seedling text-forest-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-forest-300 mb-1">Selective Grain Picking</h4>
+                                <p class="text-white/60 text-sm">Only the finest, plumpest wheat grains are selected. We reject up to 15% of the harvest to ensure top quality.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-wheat-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-truck text-wheat-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-wheat-300 mb-1">Farm-to-Mill in 24 Hours</h4>
+                                <p class="text-white/60 text-sm">Freshly harvested wheat reaches our mill within 24 hours to lock in freshness and nutrients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="reveal-right relative">
+                    <div class="absolute -inset-4 bg-wheat-400/10 rounded-3xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=700&h=500&fit=crop" alt="Wheat harvesting in India" class="relative w-full h-[420px] object-cover rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ORGANIC PROCESS ========== -->
+    <section class="py-24 bg-cream-50 wheat-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block text-wheat-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Our Process</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                    Traditional <span class="text-wheat-600">Stone-Grinding</span> Process
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full mb-6"></div>
+                <p class="text-earth-700 text-lg max-w-2xl mx-auto">We preserve the ancient art of chakki grinding, ensuring every grain retains its natural nutrition and authentic taste.</p>
+            </div>
+            
+            <!-- Process Timeline -->
+            <div class="relative">
+                <!-- Vertical Line (Desktop) -->
+                <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 timeline-line transform -translate-x-1/2 rounded-full"></div>
+                
+                <!-- Step 1 -->
+                <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 relative">
+                    <div class="lg:text-right space-y-4 order-2 lg:order-1">
+                        <span class="inline-block bg-wheat-100 text-wheat-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Step 01</span>
+                        <h3 class="font-display text-2xl font-bold text-earth-900">Grain Selection & Cleaning</h3>
+                        <p class="text-earth-600 leading-relaxed">Fresh wheat grains are hand-selected from our partner farms and thoroughly cleaned. We use natural winnowing to separate impurities, just like traditional methods.</p>
+                    </div>
+                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-wheat-500 rounded-full items-center justify-center text-white font-bold shadow-lg shadow-wheat-200 z-10">1</div>
+                    <div class="order-1 lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=350&fit=crop" alt="Wheat grain selection" class="w-full h-64 object-cover rounded-2xl shadow-lg">
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 relative">
+                    <div class="order-1">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=350&fit=crop" alt="Stone grinding process" class="w-full h-64 object-cover rounded-2xl shadow-lg">
+                    </div>
+                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-forest-500 rounded-full items-center justify-center text-white font-bold shadow-lg shadow-forest-200 z-10">2</div>
+                    <div class="space-y-4 order-2">
+                        <span class="inline-block bg-forest-100 text-forest-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Step 02</span>
+                        <h3 class="font-display text-2xl font-bold text-earth-900">Traditional Chakki Grinding</h3>
+                        <p class="text-earth-600 leading-relaxed">Our stone chakki (grinding mill) operates at low speeds to prevent heat buildup, preserving all natural nutrients, fiber, and the authentic wheat flavor that modern roller mills destroy.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 relative">
+                    <div class="lg:text-right space-y-4 order-2 lg:order-1">
+                        <span class="inline-block bg-wheat-100 text-wheat-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Step 03</span>
+                        <h3 class="font-display text-2xl font-bold text-earth-900">Quality Testing & Assurance</h3>
+                        <p class="text-earth-600 leading-relaxed">Every batch is rigorously tested in our lab using fixed SOP standards. We check for purity, moisture content, fiber levels, and nutritional value — ensuring only the best reaches you.</p>
+                    </div>
+                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-wheat-500 rounded-full items-center justify-center text-white font-bold shadow-lg shadow-wheat-200 z-10">3</div>
+                    <div class="order-1 lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=500&h=350&fit=crop" alt="Quality testing" class="w-full h-64 object-cover rounded-2xl shadow-lg">
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="reveal grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative">
+                    <div class="order-1">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=350&fit=crop" alt="Packaging and sealing" class="w-full h-64 object-cover rounded-2xl shadow-lg">
+                    </div>
+                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-forest-500 rounded-full items-center justify-center text-white font-bold shadow-lg shadow-forest-200 z-10">4</div>
+                    <div class="space-y-4 order-2">
+                        <span class="inline-block bg-forest-100 text-forest-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Step 04</span>
+                        <h3 class="font-display text-2xl font-bold text-earth-900">Hygienic Packing & Dispatch</h3>
+                        <p class="text-earth-600 leading-relaxed">The flour is packed in airtight, food-grade packaging with tamper-proof seals in a hygienic, GMP-certified facility. From our mill to your doorstep — untouched quality guaranteed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUALITY COMMITMENT ========== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="reveal-left space-y-8">
+                    <span class="inline-block text-forest-600 font-semibold uppercase tracking-[0.2em] text-sm">Quality Commitment</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 leading-tight">
+                        Certified <span class="text-forest-600">Quality</span> You Can Trust
+                    </h2>
+                    <p class="text-earth-700 text-lg leading-relaxed">
+                        At The Indian Farmers, quality isn't just a promise — it's backed by rigorous certifications and transparent processes.
+                    </p>
+                    
+                    <!-- Certifications -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-wheat-50 to-cream-50 rounded-2xl border border-wheat-100">
+                            <div class="w-14 h-14 bg-wheat-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                                <i class="fas fa-certificate text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900">FSSAI Licensed</h4>
+                                <p class="text-earth-500 text-sm">License No: 22725600000257</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-forest-50 to-cream-50 rounded-2xl border border-forest-100">
+                            <div class="w-14 h-14 bg-forest-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                                <i class="fas fa-check-double text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900">GMP Certified</h4>
+                                <p class="text-earth-500 text-sm">Good Manufacturing Practices compliant</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-wheat-50 to-cream-50 rounded-2xl border border-wheat-100">
+                            <div class="w-14 h-14 bg-wheat-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                                <i class="fas fa-shield-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900">HACCP Certified</h4>
+                                <p class="text-earth-500 text-sm">Hazard Analysis & Critical Control Points</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-forest-50 to-cream-50 rounded-2xl border border-forest-100">
+                            <div class="w-14 h-14 bg-forest-700 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                                <i class="fas fa-flag text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900">Made in India</h4>
+                                <p class="text-earth-500 text-sm">Proudly manufactured in Prayagraj, UP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package Image -->
+                <div class="reveal-right flex justify-center relative">
+                    <div class="absolute -inset-8 bg-wheat-200/30 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&fit=crop" alt="Indian Farmers Atta Package with certifications" class="relative w-80 h-96 object-cover rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ========== IMAGE GALLERY ========== -->
+    <section class="py-24 bg-gradient-to-br from-cream-50 via-wheat-50 to-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block text-wheat-600 font-semibold uppercase tracking-[0.2em] text-sm mb-3">Gallery</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-earth-900 mb-4">
+                    Our <span class="text-wheat-600">World</span> in Pictures
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&h=400&fit=crop" alt="Wheat fields" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Golden Wheat Fields</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.15s;">
+                    <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?w=500&h=400&fit=crop" alt="Harvesting" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Harvest Season</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=400&fit=crop" alt="Farm life" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Farm Life</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.25s;">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=400&fit=crop" alt="Fresh flour" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Fresh Stone-Ground Flour</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=500&h=400&fit=crop" alt="Product packaging" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Our Premium Packaging</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-lg" style="transition-delay: 0.35s;">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=400&fit=crop" alt="Product range" class="w-full h-full object-cover">
+                    <div class="gallery-overlay absolute inset-0 flex items-end p-4 md:p-6">
+                        <span class="text-white font-semibold text-sm md:text-base">Our Product Range</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="py-20 bg-gradient-to-r from-forest-700 via-forest-600 to-forest-700 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 text-[200px] leading-none">🌾</div>
+            <div class="absolute bottom-0 right-0 text-[180px] leading-none">🌾</div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Want to Know More?</h2>
+            <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">We'd love to hear from you. Whether you're a retailer, distributor, or a family looking for the best atta — reach out to us today.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-forest-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-cream-50 hover:shadow-2xl transition-all duration-300 shadow-xl flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+                <a href="tel:+917309399555" class="glass text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2">
+                    <i class="fas fa-phone-alt"></i>
+                    +91 7309399555
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-earth-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="images/logo.png" alt="The Indian Farmers Logo" class="h-14 w-14 rounded-full object-cover shadow-lg">
+                        <span class="font-display text-xl font-bold">The Indian<br>Farmers</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Pure Chakki Atta — From Farm to Kitchen. Premium quality wheat flour sourced directly from Indian farms.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-youtube text-sm"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-wheat-500 transition-all duration-300"><i class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Home</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> About Us</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Products</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Premium Chakki Atta</a></li>
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Organic Whole Wheat</a></li>
+                        <li><a href="index.html#products" class="text-white/60 hover:text-wheat-400 transition-colors flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-xs text-wheat-400/50"></i> Bulk Pack – 50kg</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-display text-lg font-bold text-wheat-400">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-wheat-400 mt-1"></i>
+                            <span class="text-white/60 text-sm">Plot No 33, Block A, Dandupur,<br>Rewa Road, Prayagraj, UP – 212111</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-wheat-400"></i>
+                            <a href="tel:+917309399555" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">+91-7309399555</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-wheat-400"></i>
+                            <a href="mailto:trade@theindianfarmers.org" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">trade@theindianfarmers.org</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-globe text-wheat-400"></i>
+                            <a href="https://theindianfarmers.info" class="text-white/60 hover:text-wheat-400 transition-colors text-sm">theindianfarmers.info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 mb-8">
+                <div class="flex flex-wrap justify-center gap-8 items-center">
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-certificate text-wheat-400/60 text-lg"></i>
+                        FSSAI: 22725600000257
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-check-circle text-forest-400/60 text-lg"></i>
+                        GMP Certified
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-shield-alt text-wheat-400/60 text-lg"></i>
+                        HACCP Certified
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-sm">
+                        <i class="fas fa-flag text-forest-400/60 text-lg"></i>
+                        Made in India
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-sm">© 2026 The Indian Farmers — Shubham Agro Product. All Rights Reserved.</p>
+                <p class="text-white/30 text-xs mt-2">Pure Grain, Honest Taste — From Farm to Kitchen</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 gold-gradient text-white rounded-full shadow-xl opacity-0 pointer-events-none transition-all duration-300 hover:shadow-2xl hover:scale-110 z-50 flex items-center justify-center">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 80);
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+        menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+        // Scroll reveal
+        function revealOnScroll() {
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
